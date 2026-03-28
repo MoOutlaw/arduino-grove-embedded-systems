@@ -1,62 +1,73 @@
-# 🔌 Arduino Embedded Systems Project — Group 26
+# Arduino Embedded Systems Project — Group 26
 
-A 3-task embedded systems project built using the **Grove Beginner Kit for Arduino**, completed as part of the DG1FDS (Fundamentals of Digital Systems) module at Aston University.
-
-## 🛠 Hardware & Tech Stack
-- **Board:** Arduino Uno (Grove Beginner Kit)
-- **Language:** C++ (Arduino)
-- **Sensors:** DHT20 (temperature/humidity), BMP280 (air pressure), Light sensor
-- **Output:** SSD1306 OLED display, LEDs, Buzzer
-- **Libraries:** `Wire.h`, `DHT20`, `Seeed_BMP280`, `U8g2lib`
+A three-task embedded systems project built using the Grove Beginner Kit for Arduino, completed as part of the DG1FDS (Fundamentals of Digital Systems) module at Aston University. The project demonstrates practical application of sensor integration, real-time data processing, and hardware control using C++ and the Arduino framework.
 
 ---
 
-## 📋 Tasks
+## Module Context
+
+**Module:** DG1FDS — Fundamentals of Digital Systems
+**Institution:** Aston University
+**Year:** 1st Year, BSc Computer Science
+**Team:** Group 26
+
+---
+
+## Hardware & Tech Stack
+
+**Board:** Arduino Uno (Grove Beginner Kit)
+**Language:** C++ (Arduino)
+
+**Sensors:**
+- DHT20 — temperature and humidity
+- BMP280 — atmospheric air pressure
+- Light sensor — ambient light level detection
+
+**Output Components:**
+- SSD1306 OLED display
+- LEDs (red and green)
+- Buzzer
+- Potentiometer
+
+**Libraries:**
+- `Wire.h` — I2C communication
+- `DHT20` — temperature and humidity sensor driver
+- `Seeed_BMP280` — air pressure sensor driver
+- `U8g2lib` — OLED display rendering
+
+---
+
+## Project Tasks
 
 ### Task 1 — Mini Weather Station
-**Folder:** `task1-weather-station/`
+**Folder:** `Task 1 Weather Station/`
 
-Monitors temperature, humidity, and air pressure in real time using the DHT20 and BMP280 sensors. Readings are displayed on an OLED screen. A buzzer triggers an alert when temperature exceeds a user-adjustable threshold set via potentiometer.
+Monitors temperature, humidity, and air pressure in real time using the DHT20 and BMP280 sensors. All readings are displayed on the OLED screen and updated continuously. A buzzer triggers an alert when the temperature exceeds a user-defined threshold, which can be adjusted live using the onboard potentiometer.
 
 **Extensions implemented:**
-- Temperature bar graph on OLED
-- Dynamic weather icons (sun / cloud / droplet) based on conditions
-- Potentiometer-controlled alarm threshold (15°C – 30°C range)
-- Memory-optimised OLED rendering using U8g2 page-buffer mode
+- Temperature bar graph rendered on the OLED display
+- Dynamic weather icons (sun, cloud, droplet) that update based on current conditions
+- Potentiometer-controlled alarm threshold, adjustable between 15°C and 30°C
+- Memory-optimised OLED rendering using U8g2 page-buffer mode to reduce RAM usage
 
 ---
 
 ### Task 2 — Smart Night-Light System
-**Folder:** `task2-night-light/`
+**Folder:** `Task 2 Night Light/`
 
-An automatic light system that monitors ambient light levels. When light drops below a set threshold, the onboard LED turns on automatically — simulating a real-world night-light. Status is shown on the OLED display.
+An automatic lighting system that reads ambient light levels from the onboard light sensor. When the detected light level drops below a defined threshold, the LED activates automatically to simulate a real-world night-light. The current light level and system status are shown on the OLED display, giving clear feedback on the system state at all times.
 
 ---
 
 ### Task 3 — Mini Pedestrian Crossing System
-**Folder:** `task3-pedestrian-crossing/`
+**Folder:** `Task 3 pedestrian crossing/`
 
-Simulates a pedestrian traffic crossing. The system starts in a STOP state (RED LED + "STOP" on OLED). When the button is pressed, it transitions to a GO state (GREEN LED + "GO" on OLED) before returning to STOP after a set interval.
+Simulates the logic of a pedestrian traffic crossing. The system initialises in a STOP state, indicated by a red LED and a "STOP" message on the OLED display. When the button is pressed, the system transitions to a GO state, activating the green LED and displaying "GO". After a fixed interval, the system automatically returns to the STOP state, completing the crossing cycle.
 
 ---
 
-## 🚀 How to Use
+## Repository Structure
 
-1. Install the [Arduino IDE](https://www.arduino.cc/en/software)
-2. Install required libraries via **Sketch → Include Library → Manage Libraries:**
-   - `DHT20` by Seeed Studio
-   - `Grove BMP280` by Seeed Studio
-   - `U8g2` by oliver
-3. Clone this repository:
-```bash
-   git clone https://github.com/USERNAME/arduino-grove-embedded-systems.git
-```
-4. Open the `.ino` file for the task you want to run (e.g. `task1-weather-station/weather_station.ino`)
-5. Connect your Grove Beginner Kit via USB
-6. Select **Tools → Board → Arduino Uno** and the correct port
-7. Click **Upload**
-
-## 📂 Repository Structure
 ```
 ├── task1-weather-station/       # Weather monitoring with sensor alerts
 ├── task2-night-light/           # Ambient light-triggered LED system
@@ -65,14 +76,46 @@ Simulates a pedestrian traffic crossing. The system starts in a STOP state (RED 
 └── README.md
 ```
 
-## 👥 Team — Group 26
+---
+
+## How to Use
+
+**Prerequisites:**
+- Arduino IDE installed on your machine
+- Grove Beginner Kit for Arduino connected via USB
+
+**Step 1 — Install required libraries**
+
+Open Arduino IDE and go to Sketch → Include Library → Manage Libraries, then search for and install:
+- `DHT20` by Seeed Studio
+- `Grove BMP280` by Seeed Studio
+- `U8g2` by oliver
+
+**Step 2 — Clone the repository**
+
+```bash
+git clone https://github.com/MoOutlaw/arduino-grove-embedded-systems.git
+```
+
+**Step 3 — Open the task**
+
+Navigate to the folder for the task you want to run and open the `.ino` file, for example:
+`task1-weather-station/weather_station.ino`
+
+**Step 4 — Configure and upload**
+
+1. Go to Tools → Board and select Arduino Uno
+2. Go to Tools → Port and select the correct COM port
+3. Click Upload
+
+The sketch will compile and upload to the board. Open the Serial Monitor if you want to observe debug output.
+
+---
+
+## Team — Group 26
+
 - Mohammed Qasem
 - Huyen Khanh Nung
 - Victor Emerem
 - Japheth Mayeye
 - Josheph Hughes
-
-## 🎓 Context
-**Module:** DG1FDS — Fundamentals of Digital Systems
-**Institution:** Aston University
-**Year:** 1st Year BSc Computer Science
