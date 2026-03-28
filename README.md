@@ -36,6 +36,9 @@ A three-task embedded systems project built using the Grove Beginner Kit for Ard
 - `U8g2lib` — OLED display rendering
 
 ---
+## Proof/Screenshots
+![Image](https://github.com/user-attachments/assets/15db81a9-7086-4575-8186-ca0e9bf66dcf)
+
 
 ## Project Tasks
 
